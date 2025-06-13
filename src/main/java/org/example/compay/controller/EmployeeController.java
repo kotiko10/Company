@@ -21,9 +21,9 @@ import org.example.compay.exception.ResourceNotFoundException;
 import org.example.compay.repository.EmployeeRepository;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/CompanyApi/v1/")
 public class EmployeeController {
 
     @Autowired
