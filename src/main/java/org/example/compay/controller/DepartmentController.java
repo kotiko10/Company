@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 @RequestMapping("/CompanyApi/v1/")
 public class DepartmentController {
