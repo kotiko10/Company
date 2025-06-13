@@ -10,6 +10,8 @@ function Navbar() {
        <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>Employees</NavLink>
        <NavLink to="/add" className={({ isActive }) => isActive ? 'active-link' : ''}>Add Employee</NavLink>
        <NavLink to="/departments" className={({ isActive }) => isActive ? 'active-link' : ''}>Departments</NavLink>
+       <NavLink to="/departments/create" className={({ isActive }) => isActive ? 'active-link' : ''}>Add Department</NavLink>
+
       </div>
     </nav>
   );
