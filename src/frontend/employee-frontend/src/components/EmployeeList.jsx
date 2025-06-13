@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import './EmployeeList.css'
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([])

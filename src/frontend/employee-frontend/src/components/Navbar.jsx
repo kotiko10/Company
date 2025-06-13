@@ -1,14 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav style={{ padding: '1rem', background: '#333', color: '#fff' }}>
-      <Link to="/" style={{ color: '#fff', marginRight: '1rem' }}>Employee Manager</Link>
-      <Link to="/add" style={{ color: '#0f0' }}>Add Employee</Link>
-      <Link to="/departments">Departments</Link>
+    <nav className="navbar">
+      <h1>Company Dashboard</h1>
+      <div className="nav-links">
+       <NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''}>Employees</NavLink>
+       <NavLink to="/add" className={({ isActive }) => isActive ? 'active-link' : ''}>Add Employee</NavLink>
+       <NavLink to="/departments" className={({ isActive }) => isActive ? 'active-link' : ''}>Departments</NavLink>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
