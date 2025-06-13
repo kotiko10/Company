@@ -18,12 +18,15 @@ function AddEmployee() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="firstName" placeholder="First Name" onChange={handleChange} required />
-      <input name="lastName" placeholder="Last Name" onChange={handleChange} required />
-      <input name="emailId" placeholder="Email" onChange={handleChange} required />
-      <button type="submit">Add</button>
-    </form>
+    <div className="form-container">
+      <h2>Add Employee</h2>
+      <form onSubmit={handleSubmit} className="employee-form">
+        <input name="firstName" placeholder="First Name" onChange={handleChange} required />
+        <input name="lastName" placeholder="Last Name" onChange={handleChange} required />
+        <input name="emailId" placeholder="Email" onChange={handleChange} required />
+        <button type="submit" className="btn submit-btn">Add</button>
+      </form>
+    </div>
   )
 }
 

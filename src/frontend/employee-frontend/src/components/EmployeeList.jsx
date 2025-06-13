@@ -21,9 +21,9 @@ function EmployeeList() {
   }
 
   return (
-    <div>
+    <div className="employee-list-container">
       <h2>Employee List</h2>
-      <table>
+      <table className="employee-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -41,8 +41,8 @@ function EmployeeList() {
               <td>{emp.firstName}</td>
               <td>{emp.lastName}</td>
               <td>
-                <Link to={`/edit/${emp.id}`}>Edit</Link>
-                <button onClick={() => deleteEmployee(emp.id)}>Delete</button>
+                <Link className="btn edit-btn" to={`/edit/${emp.id}`}>Edit</Link>
+                <button className="btn delete-btn" onClick={() => deleteEmployee(emp.id)}>Delete</button>
               </td>
             </tr>
           ))}

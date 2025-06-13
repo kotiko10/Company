@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
+import './AddEmployee.css'
 
 function EditEmployee() {
   const [employee, setEmployee] = useState({ firstName: '', lastName: '', emailId: '' })
@@ -23,12 +24,15 @@ function EditEmployee() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="firstName" value={employee.firstName} onChange={handleChange} required />
-      <input name="lastName" value={employee.lastName} onChange={handleChange} required />
-      <input name="emailId" value={employee.emailId} onChange={handleChange} required />
-      <button type="submit">Update</button>
-    </form>
+    <div className="form-container">
+      <h2>Edit Employee</h2>
+      <form onSubmit={handleSubmit} className="employee-form">
+        <input name="firstName" value={employee.firstName} onChange={handleChange} required />
+        <input name="lastName" value={employee.lastName} onChange={handleChange} required />
+        <input name="emailId" value={employee.emailId} onChange={handleChange} required />
+        <button type="submit" className="btn submit-btn">Update</button>
+      </form>
+    </div>
   )
 }
 
