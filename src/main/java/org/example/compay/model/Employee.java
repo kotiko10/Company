@@ -1,6 +1,9 @@
 package org.example.compay.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import org.apache.logging.log4j.message.Message;
 
 @Entity
 @Table(name = "employees")
@@ -15,6 +18,8 @@ public class Employee {
     @Column(name = "last_name")
     private String lastName;
 
+    @NotBlank(message = "need to provide email address")
+    @Email(message = "email address need to be formatted correctly ")
     @Column(name = "email_address")
     private String emailId;
 
