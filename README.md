@@ -80,7 +80,12 @@ spring.jpa.show-sql=true
    mvn clean install
    java -jar target/compay-0.0.1-SNAPSHOT.jar
    ```
-
+4. After starting the server
+    ``` bash
+    cd src\frontend\employee-frontend
+    npm install axios react-router-dom
+    npm run dev
+   ```
 ---
 
 ## 🧪 Running Tests
