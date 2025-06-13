@@ -24,6 +24,10 @@ public class DepartmentController {
         return departmentRepository.findAll();
     }
 
+    @PostMapping("/departments")
+    public Department createDepartment(@RequestBody Department department) {
+        return departmentRepository.save(department);
+    }
     @PutMapping("/{departmentId}/head/{employeeId}")
     public ResponseEntity<Department> updateDepartmentHead(
             @PathVariable Long departmentId,
