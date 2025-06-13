@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.example.compay.model.Employee;
+import org.example.compay.model.Department;
 import org.example.compay.exception.ResourceNotFoundException;
 import org.example.compay.repository.EmployeeRepository;
+import org.example.compay.repository.DepartmentRepository;
 
 
 @CrossOrigin(origins = "http://localhost:5174")
@@ -28,6 +30,8 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
@@ -63,6 +67,15 @@ public class EmployeeController {
     public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+
+        List<Department> departments = departmentRepository.findAll();
+        for (Department dept : departments) {
+            if (dept.getHead() != null && dept.getHead().getId() == employee.getId()) {
+                dept.setHead(null);
+                departmentRepository.save(dept);
+                break;
+            }
+        }
 
         employeeRepository.delete(employee);
         Map<String, Boolean> response = new HashMap<>();
