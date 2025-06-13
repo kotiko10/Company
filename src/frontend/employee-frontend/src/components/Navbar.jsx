@@ -6,6 +6,7 @@ function Navbar() {
     <nav style={{ padding: '1rem', background: '#333', color: '#fff' }}>
       <Link to="/" style={{ color: '#fff', marginRight: '1rem' }}>Employee Manager</Link>
       <Link to="/add" style={{ color: '#0f0' }}>Add Employee</Link>
+      <Link to="/departments">Departments</Link>
     </nav>
   )
 }

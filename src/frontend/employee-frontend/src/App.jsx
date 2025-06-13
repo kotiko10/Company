@@ -4,6 +4,7 @@ import EmployeeList from './components/EmployeeList'
 import AddEmployee from './components/AddEmployee'
 import EditEmployee from './components/EditEmployee'
 import Navbar from './components/Navbar'
+import DepartmentList from './components/DepartmentList';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<EmployeeList />} />
           <Route path="/add" element={<AddEmployee />} />
           <Route path="/edit/:id" element={<EditEmployee />} />
+          <Route path="/departments" element={<DepartmentList />} />
         </Routes>
       </div>
     </div>

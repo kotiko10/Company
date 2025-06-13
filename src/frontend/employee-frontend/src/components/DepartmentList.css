@@ -1,0 +1,32 @@
+.department-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.department-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.department-table th,
+.department-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.department-table th {
+  background-color: #f2f2f2;
+}
+
+select {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
